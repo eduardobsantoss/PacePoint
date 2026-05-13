@@ -9,6 +9,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import PageLayout from './components/layout/PageLayout';
 import Home from './pages/Home';
 import Eventos from './pages/Eventos';
+import EventoDetalhes from './pages/EventoDetalhes';
 import Resultados from './pages/Resultados';
 
 const AuthenticatedApp = () => {
@@ -37,6 +38,7 @@ const AuthenticatedApp = () => {
         <Route path="/" element={<Navigate to="/Home" replace />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Eventos" element={<Eventos />} />
+        <Route path="/Eventos/:slug" element={<EventoDetalhes />} />
         <Route path="/Resultados" element={<Resultados />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />

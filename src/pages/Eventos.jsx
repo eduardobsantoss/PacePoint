@@ -2,31 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const EVENTS = [
-    {
-        name: 'Movimento Azul',
-        location: 'Uberaba – MG – Parque Linear João Gilberto Ripposati',
-        date: '04/04/2026',
-        image: 'https://pacepoint.com.br/wp-content/uploads/2026/03/Capa-Movimento-Azul-1024x405.png',
-        inscricao: 'https://www.ticketsports.com.br/e/corrida-movimento-azul-86308',
-        detalhes: 'https://pacepoint.com.br/evento-4-movimento-azul/',
-        strava: 'https://strava.app.link/0FeCGhBvy1b',
-        status: 'open',
-        distances: ['5km Corrida', '3km Caminhada', 'Kids'],
-    },
-    {
-        name: 'VIZZA RUN',
-        location: 'Uberaba – MG – Av. Guilherme Ferreira',
-        date: '02/03/2026',
-        image: 'https://pacepoint.com.br/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-09-at-13.36.57-2-1024x405.jpeg',
-        detalhes: 'https://pacepoint.com.br/evento-3-vizza-run/',
-        resultados: '/Resultados',
-        fotos: 'https://gobro.fotto.com.br/vizza-run-uberaba-206-anos/e/283442',
-        status: 'closed',
-        distances: ['5km', '10km'],
-    },
-];
+import { EVENTOS } from '@/data/eventos';
 
 export default function Eventos() {
     return (
@@ -57,9 +33,9 @@ export default function Eventos() {
             <section className="py-16 lg:py-24 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-8">
-                        {EVENTS.map((event, i) => (
+                        {EVENTOS.map((event, i) => (
                             <motion.div
-                                key={i}
+                                key={event.slug}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -69,15 +45,16 @@ export default function Eventos() {
                                 {/* Image */}
                                 <div className="md:col-span-2 relative h-56 md:h-auto overflow-hidden">
                                     <img
-                                        src={event.image}
+                                        src={event.banner}
                                         alt={event.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 md:bg-gradient-to-l" />
-                                    <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold font-body ${event.status === 'open'
+                                    <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold font-body ${
+                                        event.status === 'open'
                                             ? 'bg-primary text-primary-foreground'
                                             : 'bg-muted-foreground/80 text-white'
-                                        }`}>
+                                    }`}>
                                         {event.status === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
                                     </span>
                                 </div>
@@ -100,7 +77,7 @@ export default function Eventos() {
                                             <div className="flex flex-wrap gap-2 mt-4">
                                                 {event.distances.map((d, j) => (
                                                     <span key={j} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold font-body">
-                                                        {d}
+                                                        {d.label ?? d}
                                                     </span>
                                                 ))}
                                             </div>
@@ -108,25 +85,34 @@ export default function Eventos() {
                                     </div>
 
                                     <div className="flex flex-wrap gap-3 mt-6">
-                                        {event.inscricao && (
+                                        {/* CTA principal: inscrição ou resultados */}
+                                        {event.status === 'open' && event.inscricao ? (
                                             <a
                                                 href={event.inscricao}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-all"
                                             >
-                                                Inscreva-se
-                                                <ChevronRight className="w-4 h-4" />
+                                                Inscreva-se <ChevronRight className="w-4 h-4" />
                                             </a>
-                                        )}
-                                        {event.resultados && (
+                                        ) : event.resultados ? (
                                             <Link
                                                 to={event.resultados}
                                                 className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-all"
                                             >
                                                 Resultados
                                             </Link>
-                                        )}
+                                        ) : null}
+
+                                        {/* Detalhes */}
+                                        <Link
+                                            to={`/Eventos/${event.slug}`}
+                                            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
+                                        >
+                                            <ChevronRight className="w-4 h-4" /> Detalhes
+                                        </Link>
+
+                                        {/* Fotos */}
                                         {event.fotos && (
                                             <a
                                                 href={event.fotos}
@@ -134,21 +120,11 @@ export default function Eventos() {
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
                                             >
-                                                <ExternalLink className="w-4 h-4" />
-                                                Fotos
+                                                <ExternalLink className="w-4 h-4" /> Fotos
                                             </a>
                                         )}
-                                        {event.detalhes && (
-                                            <a
-                                                href={event.detalhes}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
-                                            >
-                                                <ExternalLink className="w-4 h-4" />
-                                                Detalhes
-                                            </a>
-                                        )}
+
+                                        {/* Trajeto Strava */}
                                         {event.strava && (
                                             <a
                                                 href={event.strava}
@@ -156,8 +132,7 @@ export default function Eventos() {
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
                                             >
-                                                <ExternalLink className="w-4 h-4" />
-                                                Trajeto Strava
+                                                <ExternalLink className="w-4 h-4" /> Trajeto Strava
                                             </a>
                                         )}
                                     </div>

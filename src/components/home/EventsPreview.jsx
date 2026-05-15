@@ -2,28 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronRight, ArrowRight, ExternalLink } from 'lucide-react';
-
-const EVENTS = [
-  {
-    name: 'Movimento Azul',
-    location: 'Uberaba – MG – Parque Linear João Gilberto Ripposati',
-    date: '04/04/2026',
-    image: 'https://pacepoint.com.br/wp-content/uploads/2026/03/Capa-Movimento-Azul-1024x405.png',
-    inscricao: 'https://www.ticketsports.com.br/e/corrida-movimento-azul-86308',
-    detalhes: 'https://pacepoint.com.br/evento-4-movimento-azul/',
-    status: 'open',
-  },
-  {
-    name: 'VIZZA RUN',
-    location: 'Uberaba – MG – Av. Guilherme Ferreira',
-    date: '02/03/2026',
-    image: 'https://pacepoint.com.br/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-09-at-13.36.57-2-1024x405.jpeg',
-    detalhes: 'https://pacepoint.com.br/evento-3-vizza-run/',
-    resultados: '/Resultados',
-    fotos: 'https://gobro.fotto.com.br/vizza-run-uberaba-206-anos/e/283442',
-    status: 'closed',
-  },
-];
+import { EVENTOS } from '@/data/eventos';
 
 export default function EventsPreview() {
   return (
@@ -47,9 +26,9 @@ export default function EventsPreview() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {EVENTS.map((event, i) => (
+          {EVENTOS.map((event, i) => (
             <motion.div
-              key={i}
+              key={event.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -59,15 +38,16 @@ export default function EventsPreview() {
               {/* Image */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
-                  src={event.image}
+                  src={event.banner}
                   alt={event.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold font-body ${event.status === 'open'
+                <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold font-body ${
+                  event.status === 'open'
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-muted-foreground/80 text-white'
-                  }`}>
+                }`}>
                   {event.status === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
                 </span>
               </div>
@@ -85,47 +65,57 @@ export default function EventsPreview() {
                     {event.date}
                   </span>
                 </div>
+
                 <div className="mt-5 flex flex-wrap gap-3">
-                  {event.inscricao && (
+                  {/* CTA: inscrição ou resultados */}
+                  {event.status === 'open' && event.inscricao ? (
                     <a
                       href={event.inscricao}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-all"
                     >
-                      Inscreva-se
-                      <ChevronRight className="w-4 h-4" />
+                      Inscreva-se <ChevronRight className="w-4 h-4" />
                     </a>
-                  )}
-                  {event.resultados && (
+                  ) : event.resultados ? (
                     <Link
                       to={event.resultados}
                       className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-all"
                     >
                       Resultados
                     </Link>
-                  )}
+                  ) : null}
+
+                  {/* Detalhes — rota interna */}
+                  <Link
+                    to={`/Eventos/${event.slug}`}
+                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
+                  >
+                    <ChevronRight className="w-4 h-4" /> Detalhes
+                  </Link>
+
+                  {/* Fotos */}
                   {event.fotos && (
-                      <a
-                          href={event.fotos}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
-                      >
-                          <ExternalLink className="w-4 h-4" />
-                          Fotos
-                      </a>
+                    <a
+                      href={event.fotos}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" /> Fotos
+                    </a>
                   )}
-                  {event.detalhes && (
-                      <a
-                          href={event.detalhes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
-                      >
-                          <ExternalLink className="w-4 h-4" />
-                          Detalhes
-                      </a>
+
+                  {/* Trajeto Strava */}
+                  {event.strava && (
+                    <a
+                      href={event.strava}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-sm font-body transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" /> Trajeto Strava
+                    </a>
                   )}
                 </div>
               </div>

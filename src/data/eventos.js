@@ -7,8 +7,9 @@ export const EVENTOS = [
     location: 'Parque Linear João Gilberto Ripposati – Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Parque+Linear+João+Gilberto+Ripposati+Uberaba',
     date: '04/04/2026',
-    status: 'open',
-    inscricao: 'https://www.ticketsports.com.br/e/corrida-movimento-azul-86308',
+    status: 'closed',
+    resultados: '/Resultados',
+    // fotos: '', // adicionar URL da galeria quando disponível
     strava: 'https://strava.app.link/0FeCGhBvy1b',
     distances: [
       { label: 'Kids 100m', sub: '4 a 6 anos' },

@@ -40,10 +40,10 @@ export default function Eventos() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group grid md:grid-cols-5 md:items-center gap-0 rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+                                className="group grid md:grid-cols-2 md:items-center gap-0 rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
                             >
                                 {/* Image */}
-                                <div className="md:col-span-2 relative aspect-[1024/405] overflow-hidden">
+                                <div className="relative aspect-[1024/405] overflow-hidden">
                                     <img
                                         src={event.banner}
                                         alt={event.name}
@@ -60,7 +60,7 @@ export default function Eventos() {
                                 </div>
 
                                 {/* Content */}
-                                <div className="md:col-span-3 p-6 lg:p-8 flex flex-col justify-between">
+                                <div className="p-6 lg:p-8 flex flex-col justify-between">
                                     <div>
                                         <h3 className="font-heading text-2xl font-bold text-foreground">{event.name}</h3>
                                         <div className="flex flex-wrap gap-4 mt-3">

@@ -3,7 +3,7 @@ export const EVENTOS = [
   {
     slug: 'odisseia',
     name: '3ª Corrida Odisseia',
-    banner: 'https://pacepoint.com.br/wp-content/uploads/2026/04/banner-odisseia.png',
+    banner: 'https://pacepoint.com.br/wp-content/uploads/2026/04/convite-odisseia.jpeg',
     bannerDark: true,
     location: 'Rua João Batista Ribeiro – Distrito Industrial II, Uberaba/MG',
     mapsLink: 'https://maps.app.goo.gl/73dmsSQ5ecn4G3bi7',
@@ -247,7 +247,7 @@ export const EVENTOS = [
   {
     slug: 'wr-run-2026',
     name: 'WR RUN 2026',
-    banner: 'https://pacepoint.com.br/wp-content/uploads/2025/11/Arte2.png',
+    banner: 'https://pacepoint.com.br/wp-content/uploads/2025/11/896fcd5a-8d51-4021-a224-005c549eec10.jpeg',
     bannerDark: true,
     location: 'Av. Fernando Costa, 400 – São Benedito, Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Av+Fernando+Costa+400+São+Benedito+Uberaba+MG',

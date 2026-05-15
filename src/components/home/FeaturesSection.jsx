@@ -26,7 +26,7 @@ export default function FeaturesSection() {
             className="relative rounded-3xl overflow-hidden aspect-video"
           >
             <img
-              src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80"
+              src="https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?auto=format&fit=crop&q=80"
               alt="Tecnologia de cronometragem"
               className="w-full h-full object-cover"
             />

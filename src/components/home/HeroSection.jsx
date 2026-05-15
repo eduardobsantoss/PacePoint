@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?auto=format&fit=crop&q=80"
           alt="Corredores em ação"
           className="w-full h-full object-cover"
         />
@@ -80,7 +80,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 lg:mt-20 flex justify-between sm:grid sm:grid-cols-3 gap-4 sm:gap-6 max-w-md lg:max-w-lg sm:mx-0 relative z-20 pb-16"
+          className="mt-16 lg:mt-20 grid grid-cols-3 gap-6 relative z-20 pb-28"
         >
           {[
             { number: '50+', label: 'Eventos' },

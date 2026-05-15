@@ -3,7 +3,7 @@ export const EVENTOS = [
   {
     slug: 'odisseia',
     name: '3ª Corrida Odisseia',
-    banner: 'https://pacepoint.com.br/wp-content/uploads/2026/04/convite-odisseia.jpeg',
+    banner: 'https://pacepoint.com.br/wp-content/uploads/2026/04/capa-odisseia.png',
     bannerDark: false,
     location: 'Rua João Batista Ribeiro – Distrito Industrial II, Uberaba/MG',
     mapsLink: 'https://maps.app.goo.gl/73dmsSQ5ecn4G3bi7',

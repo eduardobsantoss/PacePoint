@@ -36,7 +36,7 @@ export default function EventsPreview() {
               className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative h-48 sm:h-56 overflow-hidden">
+              <div className="relative h-56 sm:h-72 overflow-hidden">
                 <img
                   src={event.banner}
                   alt={event.name}

@@ -43,7 +43,7 @@ export default function Eventos() {
                                 className="group grid md:grid-cols-5 gap-0 rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
                             >
                                 {/* Image */}
-                                <div className="md:col-span-2 relative h-72 md:h-auto overflow-hidden">
+                                <div className="md:col-span-2 relative aspect-[1024/405] md:aspect-auto md:h-full overflow-hidden">
                                     <img
                                         src={event.banner}
                                         alt={event.name}

@@ -26,7 +26,7 @@ export default function EventsPreview() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {EVENTOS.map((event, i) => (
+          {EVENTOS.slice(0, 2).map((event, i) => (
             <motion.div
               key={event.slug}
               initial={{ opacity: 0, y: 30 }}
@@ -36,7 +36,7 @@ export default function EventsPreview() {
               className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative h-56 sm:h-72 overflow-hidden">
+              <div className="relative aspect-[1024/405] overflow-hidden">
                 <img
                   src={event.banner}
                   alt={event.name}

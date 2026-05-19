@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/teste/',
   plugins: [
     react(),
   ],
@@ -11,5 +12,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  publicDir: 'public',
+  build: {
+    copyPublicDir: true,
   },
 });

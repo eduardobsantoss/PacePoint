@@ -31,8 +31,8 @@ export default function Navbar() {
           <Link to="/Home" className="flex items-center gap-2">
             <img
               src={scrolled
-                ? 'https://pacepoint.com.br/wp-content/uploads/pace-point-logo.png'
-                : 'https://pacepoint.com.br/wp-content/uploads/pace-point-logo-branco.png'
+                ? 'https://pacepoint.com.br/wp-content/uploads/2026/05/pace-point-logo-scaled.png'
+                : 'https://pacepoint.com.br/wp-content/uploads/2026/05/pace-point-logo-branco-scaled.png'
               }
               alt="Pace Point"
               className="h-10 lg:h-12"

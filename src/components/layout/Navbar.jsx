@@ -30,7 +30,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/Home" className="flex items-center gap-2">
             <img
-              src="https://pacepoint.com.br/wp-content/uploads/2025/11/Arte2.png"
+              src={scrolled
+                ? 'https://pacepoint.com.br/wp-content/uploads/pace-point-logo.png'
+                : 'https://pacepoint.com.br/wp-content/uploads/pace-point-logo-branco.png'
+              }
               alt="Pace Point"
               className="h-10 lg:h-12"
             />

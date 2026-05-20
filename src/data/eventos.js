@@ -59,8 +59,9 @@ export const EVENTOS = [
     location: 'Av. Nenê Sabino, 1666 – Olinda, Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Av+Nenê+Sabino+1666+Olinda+Uberaba+MG',
     date: '17/05/2026',
-    status: 'open',
-    inscricao: 'https://www.ticketsports.com.br/e/2%C2%AA+CORRIDA+MAIO+LARANJA-86993',
+    status: 'closed',
+    resultados: '/Resultados',
+    fotos: 'https://gobro.fotto.com.br/2-corrida-faca-bonito-maio-laranja-uberaba/e/341506',
     distances: [
       { label: 'Kids 100m', sub: '4 a 6 anos' },
       { label: 'Kids 200m', sub: '7 a 9 anos' },

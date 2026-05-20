@@ -37,7 +37,29 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Formulário enviado com sucesso!");
+
+    const itens = Object.entries(formData.itens)
+      .filter(([, v]) => v)
+      .map(([k]) => ({
+        pontoControle: 'Ponto de Controle',
+        kitChip: 'Kit Chip',
+        nenhum: 'Nenhum',
+      }[k]))
+      .join(', ') || 'Nenhum';
+
+    const msg = `Olá! Gostaria de solicitar um orçamento para cronometragem:
+
+*Nome:* ${formData.nome}
+*Email:* ${formData.email}
+*Telefone:* ${formData.telefone}
+*Cidade do evento:* ${formData.cidade}
+*Nome do evento:* ${formData.nomeEvento}
+*Data do evento:* ${formData.dataEvento}
+*Modalidade/Distância:* ${formData.modalidade}
+*Quantidade de atletas:* ${formData.quantidadeAtletas}
+*Itens desejados:* ${itens}`;
+
+    window.open(`https://wa.me/5534999860869?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (

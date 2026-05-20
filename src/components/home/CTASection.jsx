@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { openWhatsApp } from '@/components/home/ContactForm';
 
 export default function CTASection() {
   return (
@@ -30,15 +31,13 @@ export default function CTASection() {
             Entre em contato e conheça nossos serviços de inscrições online, resultados em tempo real e atendimento especializado.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://wa.me/5534992576978"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openWhatsApp()}
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-sm font-semibold font-body transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
             >
               Fale pelo WhatsApp
               <ChevronRight className="w-4 h-4" />
-            </a>
+            </button>
             <a
               href="mailto:pacepointura@gmail.com"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-sm font-semibold font-body backdrop-blur-sm border border-white/20 transition-all duration-300"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Play } from 'lucide-react';
+import { openWhatsApp } from '@/components/home/ContactForm';
 
 export default function HeroSection() {
   return (
@@ -64,14 +65,12 @@ export default function HeroSection() {
               Próximos Eventos
               <ChevronRight className="w-4 h-4" />
             </Link>
-            <a
-              href="https://wa.me/5534992576978"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openWhatsApp()}
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-7 py-3.5 rounded-full text-sm font-semibold font-body backdrop-blur-sm border border-white/20 transition-all duration-300"
             >
               Quero meu Evento
-            </a>
+            </button>
           </motion.div>
         </div>
 

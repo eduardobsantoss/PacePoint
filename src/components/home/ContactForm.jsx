@@ -161,7 +161,7 @@ export default function ContactForm() {
           <div className="flex flex-col gap-3">
             {CHECKBOX_ITEMS.map(({ name, label }) => (
               <label key={name} className="flex items-center gap-3 cursor-pointer w-fit group">
-                <div className={`w-5 h-5 rounded-md border flex items-center justify-center shadow-sm transition-all duration-200 flex-shrink-0
+                <div className={`w-5 h-5 rounded border flex items-center justify-center shadow-sm transition-all duration-200 flex-shrink-0
                   ${formData.itens[name]
                     ? 'bg-primary border-primary'
                     : 'bg-white border-input group-hover:border-primary/50'

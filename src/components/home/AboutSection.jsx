@@ -41,8 +41,9 @@ export default function AboutSection() {
               Performance é mais que cronometragem
             </h2>
             <p className="mt-6 text-muted-foreground font-body text-lg leading-relaxed">
-              A <strong className="text-foreground">PACE POINT</strong> é especialista em eventos esportivos em todo o Brasil,
-              oferecendo assessoria completa para corridas de rua, maratonas, triatlos, ciclismo e provas de diferentes modalidades.
+              A <strong className="text-foreground">PACE POINT</strong> é especialista em cronometragem e organização de eventos esportivos
+              em <strong className="text-foreground">Uberaba e região</strong>, oferecendo assessoria completa para corridas de rua,
+              caminhadas, provas Kids e diferentes modalidades.
             </p>
             <p className="mt-4 text-muted-foreground font-body leading-relaxed">
               Nossa missão é garantir <strong className="text-foreground">eficiência, precisão e inovação</strong> em cada etapa —

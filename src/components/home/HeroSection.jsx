@@ -47,8 +47,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-6 text-lg sm:text-xl text-white/70 font-body leading-relaxed max-w-lg"
           >
-            Especialistas em eventos esportivos com tecnologia de ponta em cronometragem,
-            inscrições online e resultados em tempo real.
+            Especialistas em cronometragem e organização de corridas em Uberaba e região,
+            com inscrições online e resultados em tempo real.
           </motion.p>
 
           <motion.div

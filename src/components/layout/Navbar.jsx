@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { openWhatsApp } from '@/components/home/ContactForm';
 
 const NAV_LINKS = [
   { label: 'Home', path: '/Home' },
@@ -58,15 +59,13 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <a
-            href="https://wa.me/5534992576978"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openWhatsApp()}
             className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
           >
             Orçamento
             <ChevronRight className="w-4 h-4" />
-          </a>
+          </button>
 
           {/* Mobile Toggle */}
           <button
@@ -101,14 +100,12 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="https://wa.me/5534992576978"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-semibold font-body text-center mt-2"
+              <button
+                onClick={() => openWhatsApp()}
+                className="block w-full px-4 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-semibold font-body text-center mt-2"
               >
                 Quero um Orçamento
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

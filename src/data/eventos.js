@@ -1,5 +1,61 @@
+// Retorna 'open' ou 'closed' automaticamente baseado na data do evento
+export function getEffectiveStatus(event) {
+  if (!event.dateISO) return event.status;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const eventDate = new Date(event.dateISO);
+  return eventDate < today ? 'closed' : event.status;
+}
+
 export const EVENTOS = [
   // ─── Próximos ────────────────────────────────────────────────────────────────
+  {
+    slug: 'cdl-run',
+    name: '3ª CDL RUN 2026',
+    banner: 'https://pacepoint.com.br/wp-content/uploads/2026/05/capa-cdl-run.jpeg',
+    bannerDark: true,
+    location: 'Hospital Hélio Angotti – Rua Gov. Valadares, 640, Uberaba/MG',
+    mapsLink: 'https://maps.google.com/?q=Rua+Gov+Valadares+640+Uberaba+MG',
+    date: '05/07/2026',
+    dateISO: '2026-07-05',
+    status: 'open',
+    inscricao: 'https://www.ticketsports.com.br/e/3a-cdl-run-2026-87071',
+    regulamento: 'https://pacepoint.com.br/wp-content/uploads/2026/05/CDL-REGULAMENTO-OFICAL.pdf',
+    distances: [
+      { label: 'Corrida 5km', sub: 'A partir de 14 anos' },
+      { label: 'Caminhada 3km', sub: 'A partir de 14 anos' },
+    ],
+    sobre:
+      'A 3ª CDL RUN 2026 é uma corrida de rua que celebra o esporte e a comunidade empresarial de Uberaba, organizada pela Pace Point com cronometragem oficial, premiação em dinheiro e medalha para todos os finishers. Um evento aberto a atletas de todos os níveis.',
+    programacao: [
+      { hora: '06h00', desc: 'Início do evento' },
+      { hora: '07h00', desc: 'Aquecimento' },
+      { hora: '07h20', desc: 'Largada PcD' },
+      { hora: '07h30', desc: 'Largada corrida e caminhada' },
+      { hora: '09h00', desc: 'Premiação' },
+    ],
+    inscricoes: [
+      { cat: 'Corrida 5km – Público Geral', valor: 'R$ 109,00 + 1 peça de roupa em bom estado' },
+      { cat: 'Corrida 5km – Associado CDL', valor: 'R$ 99,00 + 1 peça de roupa em bom estado' },
+      { cat: 'Caminhada 3km', valor: 'R$ 90,00 + 1 peça de roupa em bom estado' },
+    ],
+    premiacao:
+      'Medalha finisher para todos os atletas. Top 5 geral Masculino e Feminino recebem troféu + premiação em dinheiro: 1º R$800 | 2º R$600 | 3º R$500 | 4º R$300 | 5º R$200. Top 3 PCD (Masc./Fem.) e top 3 por faixa etária recebem mini troféus. Assessoria esportiva com mais atletas concluintes recebe R$500. Premiação não acumulativa.',
+    kit: 'Camiseta oficial, número de peito, chip de cronometragem, medalha pós-prova e possíveis brindes de patrocinadores.',
+    entregaKit: {
+      data: 'A definir',
+      horario: 'A definir',
+      obs: 'Apresente documento oficial com foto. Não haverá entrega de kits no dia do evento.',
+    },
+    avisos: [
+      'Chegue ao local de largada com pelo menos 30 minutos de antecedência.',
+      'O número de peito deve permanecer fixado na parte frontal da camiseta durante toda a prova.',
+      'É proibido dobrar, rasurar, cobrir ou alterar qualquer informação do número de peito.',
+      'É proibido o uso de fones de ouvido, celulares, caixas de som ou rádios durante a competição.',
+      'Será desclassificado o atleta que pegar atalhos, empurrar participantes ou receber auxílio externo irregular.',
+      'Acompanhamento por bicicletas, motos ou pacing não autorizado resulta em desclassificação.',
+    ],
+  },
   {
     slug: 'odisseia',
     name: '3ª Corrida Odisseia',
@@ -8,6 +64,7 @@ export const EVENTOS = [
     location: 'Rua João Batista Ribeiro – Distrito Industrial II, Uberaba/MG',
     mapsLink: 'https://maps.app.goo.gl/73dmsSQ5ecn4G3bi7',
     date: '13/06/2026',
+    dateISO: '2026-06-13',
     status: 'open',
     inscricao: 'https://www.ticketsports.com.br/e/3%C2%AA%20CORRIDA%20ODISSEIA%202026%20-%20IFTM-86462',
     distances: [
@@ -59,6 +116,7 @@ export const EVENTOS = [
     location: 'Av. Nenê Sabino, 1666 – Olinda, Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Av+Nenê+Sabino+1666+Olinda+Uberaba+MG',
     date: '17/05/2026',
+    dateISO: '2026-05-17',
     status: 'closed',
     resultados: '/Resultados',
     fotos: 'https://gobro.fotto.com.br/2-corrida-faca-bonito-maio-laranja-uberaba/e/341506',
@@ -109,6 +167,7 @@ export const EVENTOS = [
     location: 'Rua Aluísio de Melo Teixeira – Vila Olímpica, Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Rua+Aluísio+de+Melo+Teixeira+Vila+Olímpica+Uberaba+MG',
     date: '01/05/2026',
+    dateISO: '2026-05-01',
     status: 'closed',
     resultados: '/Resultados',
     distances: [
@@ -159,6 +218,7 @@ export const EVENTOS = [
     location: 'Parque Linear João Gilberto Ripposati – Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Parque+Linear+João+Gilberto+Ripposati+Uberaba',
     date: '04/04/2026',
+    dateISO: '2026-04-04',
     status: 'closed',
     resultados: '/Resultados',
     fotos: 'https://gobro.fotto.com.br/corrida-movimento-azul-uberaba/e/309013',
@@ -208,6 +268,7 @@ export const EVENTOS = [
     location: 'Av. Guilherme Ferreira – Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Av+Guilherme+Ferreira+Uberaba+MG',
     date: '02/03/2026',
+    dateISO: '2026-03-02',
     status: 'closed',
     resultados: '/Resultados',
     fotos: 'https://gobro.fotto.com.br/vizza-run-uberaba-206-anos/e/283442',
@@ -253,6 +314,7 @@ export const EVENTOS = [
     location: 'Av. Fernando Costa, 400 – São Benedito, Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Av+Fernando+Costa+400+São+Benedito+Uberaba+MG',
     date: '11/01/2026',
+    dateISO: '2026-01-11',
     status: 'closed',
     resultados: '/Resultados',
     distances: [
@@ -298,6 +360,7 @@ export const EVENTOS = [
     location: 'Rua João Batista Ribeiro, 4000 – Distrito Industrial II, Uberaba/MG',
     mapsLink: 'https://maps.google.com/?q=Rua+João+Batista+Ribeiro+4000+Distrito+Industrial+Uberaba+MG',
     date: '06/12/2025',
+    dateISO: '2025-12-06',
     status: 'closed',
     distances: [
       { label: 'Corrida 5km', sub: 'A partir de 14 anos' },

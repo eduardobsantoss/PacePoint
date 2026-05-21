@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronRight, ArrowRight, ExternalLink } from 'lucide-react';
-import { EVENTOS } from '@/data/eventos';
+import { EVENTOS, getEffectiveStatus } from '@/data/eventos';
 
 export default function EventsPreview() {
   return (
@@ -43,13 +43,13 @@ export default function EventsPreview() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                {(() => { const s = getEffectiveStatus(event); return (
                 <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold font-body ${
-                  event.status === 'open'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-muted-foreground/80 text-white'
+                  s === 'open' ? 'bg-primary text-primary-foreground' : 'bg-muted-foreground/80 text-white'
                 }`}>
-                  {event.status === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
+                  {s === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
                 </span>
+                ); })()}
               </div>
 
               {/* Info */}
@@ -68,7 +68,7 @@ export default function EventsPreview() {
 
                 <div className="mt-5 flex flex-wrap gap-3">
                   {/* CTA: inscrição ou resultados */}
-                  {event.status === 'open' && event.inscricao ? (
+                  {getEffectiveStatus(event) === 'open' && event.inscricao ? (
                     <a
                       href={event.inscricao}
                       target="_blank"

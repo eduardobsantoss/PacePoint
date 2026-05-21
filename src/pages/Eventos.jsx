@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { EVENTOS } from '@/data/eventos';
+import { EVENTOS, getEffectiveStatus } from '@/data/eventos';
 
 export default function Eventos() {
     return (
@@ -50,13 +50,13 @@ export default function Eventos() {
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 md:bg-gradient-to-l" />
+                                    {(() => { const s = getEffectiveStatus(event); return (
                                     <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold font-body ${
-                                        event.status === 'open'
-                                            ? 'bg-primary text-primary-foreground'
-                                            : 'bg-muted-foreground/80 text-white'
+                                        s === 'open' ? 'bg-primary text-primary-foreground' : 'bg-muted-foreground/80 text-white'
                                     }`}>
-                                        {event.status === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
+                                        {s === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
                                     </span>
+                                    ); })()}
                                 </div>
 
                                 {/* Content */}
@@ -86,7 +86,7 @@ export default function Eventos() {
 
                                     <div className="flex flex-wrap gap-3 mt-6">
                                         {/* CTA principal: inscrição ou resultados */}
-                                        {event.status === 'open' && event.inscricao ? (
+                                        {getEffectiveStatus(event) === 'open' && event.inscricao ? (
                                             <a
                                                 href={event.inscricao}
                                                 target="_blank"

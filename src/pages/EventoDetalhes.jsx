@@ -5,7 +5,7 @@ import {
   Calendar, MapPin, ChevronRight, ExternalLink, ArrowLeft,
   Clock, Users, Award, FileText, Package, AlertTriangle,
 } from 'lucide-react';
-import { getEventoBySlug } from '@/data/eventos';
+import { getEventoBySlug, getEffectiveStatus } from '@/data/eventos';
 
 function InfoCard({ children }) {
   return (
@@ -39,6 +39,7 @@ export default function EventoDetalhes() {
     );
   }
 
+  const effectiveStatus = getEffectiveStatus(evento);
   const backBadgeClass = evento.bannerDark
     ? 'bg-white/90 text-gray-900 hover:bg-white'
     : 'bg-gray-900/80 text-white hover:bg-gray-900';
@@ -62,10 +63,10 @@ export default function EventoDetalhes() {
             <h1 className="font-heading text-3xl md:text-5xl font-bold text-white">{evento.name}</h1>
             <span
               className={`px-3 py-1 rounded-full text-xs font-semibold font-body ${
-                evento.status === 'open' ? 'bg-primary text-primary-foreground' : 'bg-white/20 text-white'
+                effectiveStatus === 'open' ? 'bg-primary text-primary-foreground' : 'bg-white/20 text-white'
               }`}
             >
-              {evento.status === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
+              {effectiveStatus === 'open' ? 'Inscrições Abertas' : 'Encerrado'}
             </span>
           </div>
 
@@ -201,7 +202,7 @@ export default function EventoDetalhes() {
             <h3 className="font-heading font-bold text-foreground text-lg mb-5">Participar</h3>
 
             <div className="space-y-3">
-              {evento.status === 'open' && evento.inscricao ? (
+              {effectiveStatus === 'open' && evento.inscricao ? (
                 <a
                   href={evento.inscricao}
                   target="_blank"

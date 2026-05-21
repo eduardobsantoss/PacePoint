@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const WA_NUMBER = '5534999860869';
+const WA_NUMBER = '5534992576978';
 
 export const WA_TEMPLATE_MSG = `Olá! Gostaria de solicitar um orçamento para cronometragem:
 

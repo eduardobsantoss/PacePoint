@@ -55,13 +55,13 @@ export default function EventsPreview() {
               {/* Info */}
               <div className="p-6">
                 <h3 className="font-heading text-xl font-bold text-foreground">{event.name}</h3>
-                <div className="flex flex-wrap gap-4 mt-3">
+                <div className="flex flex-col gap-1.5 mt-3">
                   <span className="flex items-center gap-1.5 text-sm text-muted-foreground font-body">
-                    <MapPin className="w-3.5 h-3.5 text-primary" />
+                    <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                     {event.location}
                   </span>
                   <span className="flex items-center gap-1.5 text-sm text-muted-foreground font-body">
-                    <Calendar className="w-3.5 h-3.5 text-primary" />
+                    <Calendar className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                     {event.date}
                   </span>
                 </div>

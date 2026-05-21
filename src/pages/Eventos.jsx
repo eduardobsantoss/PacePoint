@@ -43,7 +43,7 @@ export default function Eventos() {
                                 className="group grid md:grid-cols-2 md:items-center gap-0 rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
                             >
                                 {/* Image */}
-                                <div className="relative aspect-[1024/405] overflow-hidden">
+                                <div className="relative aspect-[1024/405] md:aspect-auto md:self-stretch overflow-hidden">
                                     <img
                                         src={event.banner}
                                         alt={event.name}
@@ -63,13 +63,13 @@ export default function Eventos() {
                                 <div className="p-6 lg:p-8 flex flex-col justify-between">
                                     <div>
                                         <h3 className="font-heading text-2xl font-bold text-foreground">{event.name}</h3>
-                                        <div className="flex flex-wrap gap-4 mt-3">
+                                        <div className="flex flex-col gap-1.5 mt-3">
                                             <span className="flex items-center gap-1.5 text-sm text-muted-foreground font-body">
-                                                <MapPin className="w-4 h-4 text-primary" />
+                                                <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
                                                 {event.location}
                                             </span>
                                             <span className="flex items-center gap-1.5 text-sm text-muted-foreground font-body">
-                                                <Calendar className="w-4 h-4 text-primary" />
+                                                <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
                                                 {event.date}
                                             </span>
                                         </div>

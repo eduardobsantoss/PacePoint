@@ -99,10 +99,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center space-y-1">
           <p className="text-xs opacity-50 font-body">
             PacePoint © {new Date().getFullYear()} — Todos os Direitos Reservados
           </p>
+          <div className="flex items-center justify-center gap-1 text-xs font-body">
+            <span className="opacity-50 text-background">Desenvolvido por</span>
+            <a
+              href="https://www.instagram.com/estudioaurea.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-background/50 font-semibold hover:text-primary hover:shadow-[0_0_8px_theme(colors.primary)] transition-all duration-200"
+            >
+              Aurea
+            </a>
+          </div>
         </div>
       </div>
     </footer>

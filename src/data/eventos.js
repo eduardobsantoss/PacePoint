@@ -77,12 +77,12 @@ export const EVENTOS = [
     sobre:
       'A 3ª Corrida Odisseia 2026 – IFTM traz um percurso desafiador em asfalto e terra, com cronometragem oficial Pace Point e resultados publicados em tempo real. Um evento para todos os níveis, do iniciante ao experiente.',
     programacao: [
-      { hora: '16h00', desc: 'Abertura dos portões' },
+      { hora: '16h00', desc: 'Largada da Corrida 5km' },
+      { hora: '16h05', desc: 'Largada da Caminhada 3km' },
       { hora: '16h30', desc: 'Aquecimento' },
-      { hora: '17h00', desc: 'Largada da Corrida 5km' },
-      { hora: '17h05', desc: 'Largada da Caminhada 3km' },
-      { hora: '18h00', desc: 'Provas Kids' },
-      { hora: '18h30', desc: 'Cerimônia de premiação' },
+      { hora: '16h45', desc: 'Premiação' },
+      { hora: '17h00', desc: 'Largada Kids' },
+      { hora: '17h10', desc: 'Coffee Break' },
       { hora: '19h00', desc: 'Encerramento' },
     ],
     inscricoes: [

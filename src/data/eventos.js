@@ -79,11 +79,9 @@ export const EVENTOS = [
     programacao: [
       { hora: '16h00', desc: 'Largada da Corrida 5km' },
       { hora: '16h05', desc: 'Largada da Caminhada 3km' },
-      { hora: '16h30', desc: 'Aquecimento' },
       { hora: '16h45', desc: 'Premiação' },
       { hora: '17h00', desc: 'Largada Kids' },
       { hora: '17h10', desc: 'Coffee Break' },
-      { hora: '19h00', desc: 'Encerramento' },
     ],
     inscricoes: [
       { cat: 'Corrida 5km', valor: 'R$ 45,00 + 1kg alimento' },

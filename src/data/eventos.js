@@ -22,7 +22,7 @@ export const EVENTOS = [
     inscricao: 'https://www.ticketsports.com.br/e/3a-cdl-run-2026-87071',
     regulamento: 'https://pacepoint.com.br/wp-content/uploads/2026/05/CDL-REGULAMENTO-OFICAL.pdf',
     distances: [
-      { label: 'Corrida 5km', sub: 'A partir de 14 anos' },
+      { label: 'Corrida 6km', sub: 'A partir de 14 anos' },
       { label: 'Caminhada 3km', sub: 'A partir de 14 anos' },
     ],
     sobre:
@@ -35,8 +35,8 @@ export const EVENTOS = [
       { hora: '09h00', desc: 'Premiação' },
     ],
     inscricoes: [
-      { cat: 'Corrida 5km – Público Geral', valor: 'R$ 109,00 + 1 peça de roupa em bom estado' },
-      { cat: 'Corrida 5km – Associado CDL', valor: 'R$ 99,00 + 1 peça de roupa em bom estado' },
+      { cat: 'Corrida 6km – Público Geral', valor: 'R$ 109,00 + 1 peça de roupa em bom estado' },
+      { cat: 'Corrida 6km – Associado CDL', valor: 'R$ 99,00 + 1 peça de roupa em bom estado' },
       { cat: 'Caminhada 3km', valor: 'R$ 90,00 + 1 peça de roupa em bom estado' },
     ],
     premiacao:
@@ -67,6 +67,7 @@ export const EVENTOS = [
     dateISO: '2026-06-13',
     status: 'open',
     inscricao: 'https://www.ticketsports.com.br/e/3%C2%AA%20CORRIDA%20ODISSEIA%202026%20-%20IFTM-86462',
+    resultados: '/Resultados',
     distances: [
       { label: 'Kids 100m', sub: '4 a 6 anos' },
       { label: 'Kids 200m', sub: '7 a 9 anos' },

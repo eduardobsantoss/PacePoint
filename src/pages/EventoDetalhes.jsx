@@ -211,9 +211,9 @@ export default function EventoDetalhes() {
                 >
                   Inscreva-se Agora <ChevronRight className="w-4 h-4" />
                 </a>
-              ) : evento.resultados ? (
+              ) : effectiveStatus === 'closed' ? (
                 <Link
-                  to={evento.resultados}
+                  to={evento.resultados || '/Resultados'}
                   className="w-full inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-6 py-3.5 rounded-full text-sm font-semibold font-body transition-all"
                 >
                   Ver Resultados

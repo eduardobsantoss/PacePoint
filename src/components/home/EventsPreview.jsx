@@ -77,9 +77,9 @@ export default function EventsPreview() {
                     >
                       Inscreva-se <ChevronRight className="w-4 h-4" />
                     </a>
-                  ) : event.resultados ? (
+                  ) : getEffectiveStatus(event) === 'closed' ? (
                     <Link
-                      to={event.resultados}
+                      to={event.resultados || '/Resultados'}
                       className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-all"
                     >
                       Resultados

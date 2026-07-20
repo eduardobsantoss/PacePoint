@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep -l \"Brasil\\\\|todo o\\\\|país\\\\|nacional\\\\|brasil\")",
+      "Bash(xargs grep -li \"logo\\\\|navbar\\\\|header\\\\|nav\")"
+    ]
+  }
+}

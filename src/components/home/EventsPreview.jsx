@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ChevronRight, ArrowRight, ExternalLink } from 'lucide-react';
-import { EVENTOS, getEffectiveStatus } from '@/data/eventos';
+import { EVENTOS, getEffectiveStatus } from '@/data/events';
 
 export default function EventsPreview() {
   return (

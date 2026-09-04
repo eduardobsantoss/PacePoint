@@ -1,0 +1,51 @@
+export default {
+  slug: 'uberaba-sport',
+  name: '1ª Corrida Uberaba Sport',
+  banner: 'https://pacepoint.com.br/wp-content/uploads/2026/04/capa-uberaba-sport.jpeg',
+  bannerDark: true,
+  location: 'Rua Aluísio de Melo Teixeira – Vila Olímpica, Uberaba/MG',
+  mapsLink: 'https://maps.google.com/?q=Rua+Aluísio+de+Melo+Teixeira+Vila+Olímpica+Uberaba+MG',
+  date: '01/05/2026',
+  dateISO: '2026-05-01',
+  status: 'closed',
+  resultados: '/Resultados',
+  distances: [
+    { label: 'Kids 100m', sub: '4 a 6 anos' },
+    { label: 'Kids 200m', sub: '7 a 9 anos' },
+    { label: 'Kids 400m', sub: '10 a 13 anos' },
+    { label: 'Caminhada 3km', sub: 'A partir de 14 anos' },
+    { label: 'Corrida 5km', sub: 'A partir de 14 anos' },
+  ],
+  sobre:
+    'A 1ª Corrida Uberaba Sport 2026 – Base Run reuniu atletas de todas as idades em um percurso de asfalto com cronometragem oficial Pace Point. Um evento marcante para a comunidade esportiva de Uberaba.',
+  programacao: [
+    { hora: '06h00', desc: 'Abertura dos portões' },
+    { hora: '06h30', desc: 'Aquecimento' },
+    { hora: '07h00', desc: 'Largada da Corrida 5km' },
+    { hora: '07h05', desc: 'Largada da Caminhada 3km' },
+    { hora: '08h00', desc: 'Provas Kids' },
+    { hora: '08h30', desc: 'Cerimônia de premiação' },
+    { hora: '09h00', desc: 'Atrações' },
+    { hora: '11h00', desc: 'Encerramento' },
+  ],
+  inscricoes: [
+    { cat: 'Corrida 5km', valor: 'R$ 90,00' },
+    { cat: 'Caminhada 3km', valor: 'R$ 50,00' },
+    { cat: 'Kids (100m / 200m / 400m)', valor: 'R$ 50,00' },
+    { cat: '60 anos ou mais / PCD', valor: '50% de desconto' },
+  ],
+  premiacao:
+    'Medalha finisher para todos os atletas. Troféus para os 5 primeiros gerais (5km), top 3 por faixa etária e top 3 PCD. Não haverá premiação em dinheiro.',
+  kit: 'Número de peito, chip, camiseta e medalha finisher.',
+  entregaKit: {
+    data: 'A definir',
+    horario: 'A definir',
+    obs: 'Apresente comprovante de inscrição e documento de identidade. Retirada por terceiros apenas com autorização.',
+  },
+  avisos: [
+    'Chegue ao local de largada com pelo menos 30 minutos de antecedência.',
+    'O uso do número de peito é obrigatório durante toda a prova.',
+    'O chip deve estar corretamente posicionado para a cronometragem.',
+    'A prova é individual — proibido auxílio de terceiros ou pacing.',
+  ],
+};

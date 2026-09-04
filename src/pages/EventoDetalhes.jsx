@@ -5,7 +5,7 @@ import {
   Calendar, MapPin, ChevronRight, ExternalLink, ArrowLeft,
   Clock, Users, Award, FileText, Package, AlertTriangle,
 } from 'lucide-react';
-import { getEventoBySlug, getEffectiveStatus } from '@/data/eventos';
+import { getEventoBySlug, getEffectiveStatus } from '@/data/events';
 
 function InfoCard({ children }) {
   return (

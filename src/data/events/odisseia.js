@@ -1,0 +1,51 @@
+export default {
+  slug: 'odisseia',
+  name: '3ª Corrida Odisseia',
+  banner: 'https://pacepoint.com.br/wp-content/uploads/2026/04/capa-odisseia.png',
+  bannerDark: false,
+  location: 'Rua João Batista Ribeiro – Distrito Industrial II, Uberaba/MG',
+  mapsLink: 'https://maps.app.goo.gl/73dmsSQ5ecn4G3bi7',
+  date: '13/06/2026',
+  dateISO: '2026-06-13',
+  status: 'closed',
+  inscricao: 'https://www.ticketsports.com.br/e/3%C2%AA%20CORRIDA%20ODISSEIA%202026%20-%20IFTM-86462',
+  resultados: '/Resultados',
+  distances: [
+    { label: 'Kids 100m', sub: '4 a 6 anos' },
+    { label: 'Kids 200m', sub: '7 a 9 anos' },
+    { label: 'Kids 400m', sub: '10 a 13 anos' },
+    { label: 'Caminhada 3km', sub: 'A partir de 14 anos' },
+    { label: 'Corrida 5km', sub: 'A partir de 14 anos' },
+  ],
+  sobre:
+    'A 3ª Corrida Odisseia 2026 – IFTM traz um percurso desafiador em asfalto e terra, com cronometragem oficial Pace Point e resultados publicados em tempo real. Um evento para todos os níveis, do iniciante ao experiente.',
+  programacao: [
+    { hora: '16h00', desc: 'Largada da Corrida 5km' },
+    { hora: '16h05', desc: 'Largada da Caminhada 3km' },
+    { hora: '16h45', desc: 'Premiação' },
+    { hora: '17h00', desc: 'Largada Kids' },
+    { hora: '17h10', desc: 'Coffee Break' },
+  ],
+  inscricoes: [
+    { cat: 'Corrida 5km', valor: 'R$ 45,00 + 1kg alimento' },
+    { cat: 'Caminhada 3km', valor: 'R$ 35,00 + 1kg alimento' },
+    { cat: 'Kids (100m / 200m / 400m)', valor: 'R$ 35,00 + 1kg alimento' },
+    { cat: '60 anos ou mais / PCD', valor: '50% de desconto' },
+    { cat: 'Alunos e servidores IFTM', valor: '30% de desconto (corrida)' },
+  ],
+  premiacao:
+    'Medalha finisher para todos os atletas. Troféus para os 5 primeiros gerais Masculino e Feminino (5km), top 3 PCD (Masc./Fem.), top 3 por faixa etária e categoria IFTM. Não haverá premiação em dinheiro.',
+  kit: 'Número de peito, chip, camiseta, alfinetes e medalha finisher.',
+  entregaKit: {
+    data: 'A definir',
+    horario: 'A definir',
+    obs: 'Apresente comprovante de inscrição e documento de identidade. Retirada por terceiros apenas com autorização. Não haverá entrega de kits no dia do evento.',
+  },
+  avisos: [
+    'Chegue ao local de largada com pelo menos 30 minutos de antecedência.',
+    'O uso do número de peito é obrigatório durante toda a prova.',
+    'O chip deve estar corretamente posicionado para a cronometragem.',
+    'A prova é individual — proibido auxílio de terceiros ou pacing.',
+    'Infrações ao regulamento resultam em desclassificação.',
+  ],
+};

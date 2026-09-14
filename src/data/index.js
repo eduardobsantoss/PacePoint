@@ -8,7 +8,6 @@ import { getEffectiveStatus, sortEvents } from './rules';
 
 import circuitoTonin from './events/circuito-tonin';
 import dcRun from './events/dc-run';
-import outubroRosa from './events/outubro-rosa';
 import cdlRun from './events/cdl-run';
 import odisseia from './events/odisseia';
 import maioLaranja from './events/maio-laranja';
@@ -21,7 +20,6 @@ import corraTransforme from './events/corra-transforme';
 const ALL_EVENTS = [
   circuitoTonin,
   dcRun,
-  outubroRosa,
   cdlRun,
   odisseia,
   maioLaranja,
